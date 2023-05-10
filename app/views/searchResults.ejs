@@ -1,0 +1,11 @@
+<%- include('partials/header'); %>
+<main>
+    <h1>Recherche</h1>
+    <div>Résultat de la recherche : <%= searchString %></div>
+    <ul>
+        <% for (const game of searchResults) { %>
+            <li><a href="/game/<%= game.name %>"><%= game.title %></a></li>
+        <% } %>
+    </ul>
+</main>
+<%- include('partials/footer'); %>

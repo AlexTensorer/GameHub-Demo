@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+    <meta charset="UTF-8">
+    <% if (locals.currentGame) { %>
+        <title><%= currentGame.title %> - GameHub</title>
+    <% } else { %>
+        <title>GameHub</title>
+    <% } %>
+    <link rel="stylesheet" href="/css/style.css">
+    <%# si le jeu qu'on affiche en ce moment a un fichier CSS associé, on génère la balise <link> correspondante %>
+    <%# vérifier qu'on a accès à currentGame avant de l'utiliser %>
+    <% if (locals.currentGame && currentGame.cssFile) { %>
+    <link rel="stylesheet" href="/css/<%= currentGame.cssFile %>">
+    <% } %>
+  </head>
+
+  <body>
+    <header>
+      <h1>GameHub</h1>
+      <div>
+        <form action="/search">
+          <input type="text" name="search" placeholder="Rechercher...">
+          <button type="submit">Rechercher</button>
+        </form>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="/">Accueil</a></li>
+          <% for (const game of gameList) { %>
+          <li><a href="/game/<%= game.name %>"><%= game.title %></a></li>
+          <% } %>
+        </ul>
+      </nav>
+    </header>
