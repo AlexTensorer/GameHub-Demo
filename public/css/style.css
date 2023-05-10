@@ -10,6 +10,9 @@ a {
 }
 
 /* True Styling */
+body {
+  background: linear-gradient(to bottom, #d1cdcd 0%, #fff 100%)
+}
 
 header {
   background: rgb(88, 87, 87) center / cover no-repeat url(/images/boardgames.jpg) ;
@@ -57,4 +60,20 @@ header nav ul li:hover {
 h3 {
   text-align: center;
   line-height: 3rem;
+}
+
+#search-bar {
+  text-align: center;
+}
+
+input, button {
+  font-size: 1em;
+  padding: 10px;
+  margin: 10px;
+  border: rgb(226, 225, 225) 1px solid;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: rgb(219, 218, 218);
 }
